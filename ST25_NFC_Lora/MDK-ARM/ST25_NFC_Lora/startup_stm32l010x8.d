@@ -1,0 +1,1 @@
+st25_nfc_lora\startup_stm32l010x8.o: startup_stm32l010x8.s

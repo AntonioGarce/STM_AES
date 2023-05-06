@@ -1,0 +1,108 @@
+<html>
+<body>
+<pre>
+<h1>µVision Build Log</h1>
+<h2>Tool Versions:</h2>
+IDE-Version: µVision V5.28.0.0
+Copyright (C) 2019 ARM Ltd and ARM Germany GmbH. All rights reserved.
+License Information: 1star,  , LIC=----
+ 
+Tool Versions:
+Toolchain:       MDK-Lite  Version: 5.28.0.0
+Toolchain Path:  C:\Keil_v5\ARM\ARMCC\Bin
+C Compiler:      Armcc.exe V5.06 update 6 (build 750)
+Assembler:       Armasm.exe V5.06 update 6 (build 750)
+Linker/Locator:  ArmLink.exe V5.06 update 6 (build 750)
+Library Manager: ArmAr.exe V5.06 update 6 (build 750)
+Hex Converter:   FromElf.exe V5.06 update 6 (build 750)
+CPU DLL:         SARMCM3.DLL V5.28.0.0
+Dialog DLL:      DARMCM1.DLL V1.19.2.0
+Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.6.0
+Dialog DLL:      TARMCM1.DLL V1.14.1.0
+ 
+<h2>Project:</h2>
+D:\kchu\task\AES-128-CTR-STM32-KEIL\ST25_NFC_Lora\MDK-ARM\ST25_NFC_Lora.uvprojx
+Project File Date:  12/05/2022
+
+<h2>Output:</h2>
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'C:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'ST25_NFC_Lora'
+assembling startup_stm32l010x8.s...
+compiling stm32l0xx_hal_msp.c...
+compiling stm32l0xx_it.c...
+compiling main.c...
+../Core/Src/main.c(267): warning:  #1295-D: Deprecated declaration parse_rxstring - give arg types
+  static void parse_rxstring();
+../Core/Src/main.c(268): warning:  #1295-D: Deprecated declaration check_uart - give arg types
+  static void check_uart();
+../Core/Src/main.c(357): warning:  #940-D: missing return statement at end of non-void function "Get_ADC_Input" 
+  }
+../Core/Src/main.c(415): warning:  #940-D: missing return statement at end of non-void function "nfc_setup_GPO" 
+  }
+../Core/Src/main.c(1238): warning:  #177-D: variable "n"  was declared but never referenced
+    uint8_t n=0; 
+../Core/Src/main.c(1434): warning:  #177-D: variable "temp"  was declared but never referenced
+  	uint8_t temp;
+../Core/Src/main.c(1261): warning:  #177-D: function "Modem_save_conf"  was declared but never referenced
+  void Modem_save_conf(void)
+../Core/Src/main.c(1675): warning:  #177-D: function "TMP75_sleep"  was declared but never referenced
+  void (TMP75_sleep)(void)
+../Core/Src/main.c(1858): warning:  #177-D: function "test_onboard_pressure_sensor"  was declared but never referenced
+  void (test_onboard_pressure_sensor)(void)
+../Core/Src/main.c(1306): warning:  #177-D: function "reset_upctr"  was declared but never referenced
+  void reset_upctr(void)
+../Core/Src/main.c(1926): warning:  #177-D: function "check_uart"  was declared but never referenced
+  void (check_uart)(void)
+../Core/Src/main.c(2056): warning:  #177-D: function "AES_128_xcrypt"  was declared but never referenced
+  void AES_128_xcrypt(uint8_t* in, uint8_t* out, uint16_t length, uint8_t* key)
+../Core/Src/main.c: 12 warnings, 0 errors
+compiling aes.c...
+compiling stm32l0xx_hal_iwdg.c...
+compiling stm32l0xx_hal_adc.c...
+compiling stm32l0xx_hal_adc_ex.c...
+compiling stm32l0xx_hal.c...
+compiling stm32l0xx_hal_i2c_ex.c...
+compiling stm32l0xx_hal_rcc.c...
+compiling stm32l0xx_hal_i2c.c...
+compiling stm32l0xx_hal_rcc_ex.c...
+compiling stm32l0xx_hal_flash_ramfunc.c...
+compiling stm32l0xx_hal_flash.c...
+compiling stm32l0xx_hal_flash_ex.c...
+compiling stm32l0xx_hal_gpio.c...
+compiling stm32l0xx_hal_pwr.c...
+compiling stm32l0xx_hal_dma.c...
+compiling stm32l0xx_hal_pwr_ex.c...
+compiling stm32l0xx_hal_cortex.c...
+compiling stm32l0xx_hal_exti.c...
+compiling stm32l0xx_hal_rtc.c...
+compiling stm32l0xx_hal_tim_ex.c...
+compiling stm32l0xx_hal_tim.c...
+compiling stm32l0xx_hal_rtc_ex.c...
+compiling system_stm32l0xx.c...
+compiling stm32l0xx_hal_uart_ex.c...
+compiling stm32l0xx_hal_uart.c...
+linking...
+Program Size: Code=18952 RO-data=280 RW-data=356 ZI-data=1580  
+FromELF: creating hex file...
+After Build - User command #1: C:\Keil_v5\ARM\ARMCC\include\..\bin\fromelf.exe --bin --output=..\Binary\ST25_NFC_Lora.bin ST25_NFC_Lora\ST25_NFC_Lora.axf
+"ST25_NFC_Lora\ST25_NFC_Lora.axf" - 0 Error(s), 12 Warning(s).
+
+<h2>Software Packages used:</h2>
+
+Package Vendor: ARM
+                http://www.keil.com/pack/ARM.CMSIS.5.5.1.pack
+                ARM.CMSIS.5.5.1
+                CMSIS (Cortex Microcontroller Software Interface Standard)
+   * Component: CORE Version: 5.2.0
+
+<h2>Collection of Component include folders:</h2>
+  .\RTE\_ST25_NFC_Lora
+  C:\Users\1star\AppData\Local\Arm\Packs\ARM\CMSIS\5.5.1\CMSIS\Core\Include
+
+<h2>Collection of Component Files used:</h2>
+
+   * Component: ARM::CMSIS:CORE:5.2.0
+Build Time Elapsed:  00:00:11
+</pre>
+</body>
+</html>

@@ -1,0 +1,7 @@
+bin/*
+bin
+*.o
+testing/*
+testing
+ctrtests
+ctrtests/*

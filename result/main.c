@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdint.h>
+
+#define CBC 1
+#define CTR 1
+#define ECB 1
+
+#include "aes.h"
+static void AES_128_xcrypt(uint8_t* in, uint8_t* out, uint16_t length, uint8_t* key);
+
+int main(void)
+{
+    int exit;
+    uint8_t AES128_key[16] = {0x33,0x44,0x55,0x66,0x77,0x88,0x99,0x00,0x33,0x44,0x55,0x66,0x77,0x88,0x99,0x00};
+    uint8_t in[16]  = { 0xA6,0xE8,0x41,0xF5,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00,0x00 };
+
+    uint8_t out[16] = { 0x01,0x01,0x0E,0x00,0xA4,0xD0,0x23,0x6C,0x3E,0x3E,0x13,0x47,0xD1,0xFE,0x05,0xE9 };
+    struct AES_ctx ctx;
+    uint8_t out1[16];
+    
+    AES_128_xcrypt(out,out1,16,AES128_key);
+//    AES_128_xcrypt(out1,out,16,AES128_key);
+    
+    if (0 == memcmp((char *) in, (char *) out1, 16)) {
+        printf("SUCCESS!\n");
+		return(0);
+    } else {
+        printf("FAILURE!\n");
+		return(1);
+    }
+    
+    return exit;
+}
+
+void AES_128_xcrypt(uint8_t* in, uint8_t* out, uint16_t length, uint8_t* key)
+{
+	struct AES_ctx ctx;
+    uint8_t iv[16]  = { 0x01,0x00,0x00,0x00,0x00,0x01,0x86,0x03,0x00,0x00,0x32,0x00,0x00,0x00,0x00,0x01 }; memcpy(out,in,length);
+    
+    AES_init_ctx_iv(&ctx, key, iv);  
+    AES_CTR_xcrypt_buffer(&ctx, out, length); //encrypt 
+    
+}
